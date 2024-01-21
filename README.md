@@ -25,6 +25,26 @@ Dependencies:
 -  `wandb` for optional logging <3
 -  `tqdm` for progress bars <3
 
+
+## Running apachelogs finetuning on Mac
+
+We need to use this specific version of PyTorch for mac silicon chips
+```
+pip install \
+  --pre torch torchvision torchaudio \
+  --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+```
+
+Prepare Data
+```
+python data/apachelogs/prepare.py
+```
+
+Train
+```
+python train.py config/train_apachelogs.py
+```
+
 ## quick start
 
 If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB) file and turn it from raw text into one large stream of integers:
