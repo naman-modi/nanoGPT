@@ -26,21 +26,23 @@ Dependencies:
 -  `tqdm` for progress bars <3
 
 
-## Model training for apachelogs on Mac
+## quick start on model training & generation for apachelogs on Mac
 
 We need to use this specific version of PyTorch for mac silicon chips
 ```
+pip install torch numpy transformers datasets tiktoken wandb tqdm
+
 pip install \
   --pre torch torchvision torchaudio \
   --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 
-#### Prepare Data
+#### Prepare Data (can skip is model checkpoint already exists)
 ```
 python data/apachelogs/prepare.py
 ```
 
-#### Train model
+#### Train model (can skip is model checkpoint already exists)
 ```
 python train.py config/train_apachelogs.py
 ```
