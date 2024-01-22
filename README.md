@@ -26,7 +26,7 @@ Dependencies:
 -  `tqdm` for progress bars <3
 
 
-## Running apachelogs finetuning on Mac
+## Model training for apachelogs on Mac
 
 We need to use this specific version of PyTorch for mac silicon chips
 ```
@@ -35,14 +35,20 @@ pip install \
   --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 
-Prepare Data
+#### Prepare Data
 ```
 python data/apachelogs/prepare.py
 ```
 
-Train
+#### Train model
 ```
 python train.py config/train_apachelogs.py
+```
+
+#### Generate Data
+- Other parameters can also be overridden is required while executing sample.py
+```
+python sample.py --num_samples=5 --max_new_tokens=1000 --top_k=800 --seed=3686 --device=cpu
 ```
 
 ## quick start
