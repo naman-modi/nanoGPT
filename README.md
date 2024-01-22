@@ -51,6 +51,8 @@ python train.py config/train_apachelogs.py
 python sample.py --num_samples=5 --max_new_tokens=1000 --top_k=800 --seed=3686 --device=cpu
 ```
 
+- The generated data will be available in the `output/` directory with filename `output_{generation_timestamp}.log` 
+
 ## quick start
 
 If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB) file and turn it from raw text into one large stream of integers:
